@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Funngro is a platform where you can earn money by completing mini-tasks, downloading apps, and engaging in projects based on your interests.">
+    <title>Funngro - Earn. Engage. Grow.</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0b0c10;
+            color: #e0e6f1;
+        }
+
+        /* Custom scrollbar for a techy look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #151a21;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3952a5;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4a66bd;
+        }
+
+        /* Hero section background with a subtle grid pattern */
+        .hero-bg {
+            background-image: linear-gradient(rgba(11, 12, 16, 0.9), rgba(11, 12, 16, 0.9)), url('data:image/svg+xml,%3Csvg width="100" height="100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0h100v100H0V0zm1 1h98v98H1V1z" fill="%231a1f26"/%3E%3C/svg%3E');
+            background-size: 20px 20px, cover;
+        }
+
+        /* Custom glow effect for buttons and cards */
+        .glow-shadow {
+            box-shadow: 0 0 15px rgba(94, 106, 210, 0.4), 0 0 5px rgba(94, 106, 210, 0.2);
+        }
+        .hover\:glow-shadow:hover {
+            box-shadow: 0 0 25px rgba(94, 106, 210, 0.6), 0 0 10px rgba(94, 106, 210, 0.4);
+        }
+
+        /* Custom glowing border for cards */
+        .card-border {
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            background-origin: border-box;
+            background-image: linear-gradient(#151a21, #151a21), radial-gradient(circle at top left, #3952a5, #5e6ad2);
+            position: relative;
+        }
+        .card-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 2px;
+            background: radial-gradient(circle at top left, #3952a5, transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        .card-border:hover::before {
+            background: radial-gradient(circle at top left, #5e6ad2, transparent);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Navigation Bar -->
+    <header class="bg-black bg-opacity-30 backdrop-blur-lg shadow-lg sticky top-0 z-50 border-b border-gray-800">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold text-[#5e6ad2] hover:text-[#7d88e0] transition-colors font-mono">
+                Funngro
+            </a>
+            <div class="flex space-x-2 md:space-x-4">
+                <button onclick="showPage('company')" class="nav-link px-4 py-2 text-white font-medium bg-[#3952a5] rounded-full hover:bg-[#4a66bd] transition-transform transform hover:scale-105 shadow-md glow-shadow hover:glow-shadow focus:outline-none focus:ring-2 focus:ring-[#3952a5] focus:ring-opacity-50">
+                    For Businesses
+                </button>
+                <button onclick="showPage('teen')" class="nav-link px-4 py-2 text-white font-medium bg-[#3952a5] rounded-full hover:bg-[#4a66bd] transition-transform transform hover:scale-105 shadow-md glow-shadow hover:glow-shadow focus:outline-none focus:ring-2 focus:ring-[#3952a5] focus:ring-opacity-50">
+                    For Users
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow container mx-auto px-4 py-8 md:py-16">
+        
+        <!-- For Businesses Page Section -->
+        <section id="company-page" class="page-content space-y-12">
+            <div class="text-center hero-bg p-8 md:p-16 rounded-3xl mb-12">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4 animate-fade-in font-mono">
+                    Access a Driven User Base. Instantly.
+                </h1>
+                <p class="text-lg md:text-xl text-[#94a3b8] max-w-4xl mx-auto animate-fade-in-delay">
+                    Launch your app, validate your product, or get instant feedback with Funngro's task-based marketing platform.
+                </p>
+                <a href="#" class="mt-8 inline-block px-8 py-4 text-lg font-bold text-white bg-[#eab308] rounded-full hover:bg-[#d9a307] transition-transform transform hover:scale-105 shadow-lg glow-shadow hover:glow-shadow">
+                    Post a Task
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature Card 1 -->
+                <div class="bg-[#151a21] p-8 rounded-2xl shadow-xl card-border hover:shadow-2xl">
+                    <div class="text-4xl mb-4 text-center">📈</div>
+                    <h2 class="text-2xl font-bold text-[#e0e6f1] mb-2 font-mono">Guaranteed Engagement</h2>
+                    <p class="text-[#94a3b8]">
+                        Boost your app's downloads and user engagement with a community motivated by rewards.
+                    </p>
+                </div>
+                <!-- Feature Card 2 -->
+                <div class="bg-[#151a21] p-8 rounded-2xl shadow-xl card-border hover:shadow-2xl">
+                    <div class="text-4xl mb-4 text-center">🎯</div>
+                    <h2 class="text-2xl font-bold text-[#e0e6f1] mb-2 font-mono">Targeted Audience</h2>
+                    <p class="text-[#94a3b8]">
+                        Specify your ideal user demographics and interests to ensure your tasks reach the right people.
+                    </p>
+                </div>
+                <!-- Feature Card 3 -->
+                <div class="bg-[#151a21] p-8 rounded-2xl shadow-xl card-border hover:shadow-2xl">
+                    <div class="text-4xl mb-4 text-center">⚡</div>
+                    <h2 class="text-2xl font-bold text-[#e0e6f1] mb-2 font-mono">Rapid Results</h2>
+                    <p class="text-[#94a3b8]">
+                        Launch a campaign and see results in real-time, with tasks completed in minutes, not days.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- For Users Page Section (initially hidden) -->
+        <section id="teen-page" class="page-content hidden space-y-12">
+            <div class="text-center hero-bg p-8 md:p-16 rounded-3xl mb-12">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4 animate-fade-in font-mono">
+                    Your Tasks. Your Rewards.
+                </h1>
+                <p class="text-lg md:text-xl text-[#94a3b8] max-w-4xl mx-auto animate-fade-in-delay">
+                    Get paid for completing simple tasks, discovering new apps, and contributing to real-world projects.
+                </p>
+                <a href="#" class="mt-8 inline-block px-8 py-4 text-lg font-bold text-white bg-[#86efac] text-[#0b0c10] rounded-full hover:bg-[#6ee7b7] transition-transform transform hover:scale-105 shadow-lg glow-shadow hover:glow-shadow">
+                    Start Earning Today
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature Card 1 -->
+                <div class="bg-[#151a21] p-8 rounded-2xl shadow-xl card-border hover:shadow-2xl">
+                    <div class="text-4xl mb-4 text-center">💰</div>
+                    <h2 class="text-2xl font-bold text-[#e0e6f1] mb-2 font-mono">Instant Payouts</h2>
+                    <p class="text-[#94a3b8]">
+                        Earn money for every task you complete, with fast and secure payments directly to your account.
+                    </p>
+                </div>
+                <!-- Feature Card 2 -->
+                <div class="bg-[#151a21] p-8 rounded-2xl shadow-xl card-border hover:shadow-2xl">
+                    <div class="text-4xl mb-4 text-center">🎮</div>
+                    <h2 class="text-2xl font-bold text-[#e0e6f1] mb-2 font-mono">Fun & Engaging Tasks</h2>
+                    <p class="text-[#94a3b8]">
+                        From downloading games to testing new features, every task is a new adventure.
+                    </p>
+                </div>
+                <!-- Feature Card 3 -->
+                <div class="bg-[#151a21] p-8 rounded-2xl shadow-xl card-border hover:shadow-2xl">
+                    <div class="text-4xl mb-4 text-center">🌟</div>
+                    <h2 class="text-2xl font-bold text-[#e0e6f1] mb-2 font-mono">Build Your Profile</h2>
+                    <p class="text-[#94a3b8]">
+                        The more you engage, the more you learn. Build a profile that showcases your skills and interests.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#151a21] py-8 mt-auto border-t border-gray-800">
+        <div class="container mx-auto px-4 text-center text-[#94a3b8]">
+            <p class="mb-2 font-mono">© 2025 Funngro. All Rights Reserved.</p>
+            <p class="space-x-4">
+                <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms</a>
+                <a href="#" class="hover:text-white transition-colors">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for page switching -->
+    <script>
+        // Function to show the selected page and hide others
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => {
+                page.classList.add('hidden');
+            });
+            document.getElementById(pageId + '-page').classList.remove('hidden');
+        }
+
+        // Initially show the company page
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('company');
+        });
+    </script>
+</body>
+</html>
